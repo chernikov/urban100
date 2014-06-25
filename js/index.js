@@ -68,7 +68,6 @@ function Index() {
 		} else {
 			_this.stopChangeImage();
 		}
-		
 	};
 	
 	this.changeImage = function(num) {

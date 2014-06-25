@@ -4,7 +4,6 @@ $(function(){
 	{
          $.fn.menuSlide = function() {
            var left = $(this).position().left;
-		   console.log("Left: "+ left);
            $("#menuSlider").animate({ left : left }, { duration: 400, queue: false });
            return this;
          }; 

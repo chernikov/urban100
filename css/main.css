@@ -133,7 +133,7 @@ ul.content li {
 { 
 	.wrapper
 	{
-		padding : 80px 0 0 0;
+		padding : 66px 0 0 0;
 		zoom : 1;
 	}
 }
@@ -260,6 +260,7 @@ ul.content li {
 }
 
 .slider-menu .dots .dot {
+	list-style : none;
 	width : 10px;
 	height : 10px;
 	margin : 0 0 18px 0;
@@ -344,6 +345,14 @@ ul.content li {
 	margin : 0 0 50px 0;
 }
 
+@media (min-width: 1800px) 
+{ 
+	.idea-wrapper h1
+	{
+		padding : 260px 0 0 0;
+	}
+}
+
 .idea-wrapper p {
 	font-family: 'Open Sans', sans-serif;
 	font-size : 14px;
@@ -372,6 +381,15 @@ ul.content li {
 .implementation-wrapper h1 {
 	padding : 360px 0 0 0;
 	margin : 0 0 50px 0;
+}
+
+
+@media (min-width: 1800px) 
+{ 
+	.implementation-wrapper h1
+	{
+		padding : 260px 0 0 0;
+	}
 }
 
 .implementation-wrapper p {
@@ -405,6 +423,14 @@ ul.content li {
 	padding : 360px 0 0 0;
 	margin : 0 0 50px 0;
 } 
+
+@media (min-width: 1800px) 
+{ 
+	.how-work-wrapper h1 
+	{
+		padding : 260px 0 0 0;
+	}
+}
 
 .how-work-wrapper p 
 {
@@ -502,11 +528,27 @@ ul.content li {
 	margin : 10px 0 0 200px;
 }
 
+@media (min-width: 1800px) 
+{ 
+	.faq-wrapper h1 
+	{
+		padding : 60px 0 0 0;
+	}
+}
+
 .faq-wrapper .faq {
 	margin-top : 100px;
 	width : 900px;
 	min-height : 1000px;
 }
+
+@media (min-width: 1800px) 
+{ 
+	.faq-wrapper .faq {
+		min-height : 650px;
+	}
+}
+
 .faq-wrapper .faq li {
 	margin : 40px 0 0 0;
 }
@@ -531,6 +573,7 @@ ul.content li {
 	font-size : 17px;
 	text-align : right;
 	padding : 0 20px 0 0;
+	margin : 0 0 20px 0;
 }
 
 .footer .if-logo {
