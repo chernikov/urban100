@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>urban100.Web</RootNamespace>
     <AssemblyName>urban100.Web</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>true</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -84,9 +84,9 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -150,6 +150,7 @@
     <Folder Include="Areas\Default\Models\" />
     <Folder Include="Content\files\uploads\" />
     <Folder Include="Content\logs\" />
+    <Folder Include="Scripts\admin\" />
     <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
@@ -213,13 +214,60 @@
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\fineuploader-4.1.1.min.css" />
     <Content Include="Content\css\fineuploader.css" />
+    <Content Include="Content\css\main.css" />
     <Content Include="Content\css\PagedList.css" />
+    <Content Include="Content\images\add.png" />
+    <Content Include="Content\images\background.jpg" />
     <Content Include="Content\images\default_avatar.jpg" />
+    <Content Include="Content\images\faces\face_1.jpg" />
+    <Content Include="Content\images\faces\face_10.jpg" />
+    <Content Include="Content\images\faces\face_11.jpg" />
+    <Content Include="Content\images\faces\face_12.jpg" />
+    <Content Include="Content\images\faces\face_13.jpg" />
+    <Content Include="Content\images\faces\face_14.jpg" />
+    <Content Include="Content\images\faces\face_15.jpg" />
+    <Content Include="Content\images\faces\face_16.jpg" />
+    <Content Include="Content\images\faces\face_17.jpg" />
+    <Content Include="Content\images\faces\face_18.jpg" />
+    <Content Include="Content\images\faces\face_19.jpg" />
+    <Content Include="Content\images\faces\face_2.jpg" />
+    <Content Include="Content\images\faces\face_20.jpg" />
+    <Content Include="Content\images\faces\face_3.jpg" />
+    <Content Include="Content\images\faces\face_4.jpg" />
+    <Content Include="Content\images\faces\face_5.jpg" />
+    <Content Include="Content\images\faces\face_6.jpg" />
+    <Content Include="Content\images\faces\face_7.jpg" />
+    <Content Include="Content\images\faces\face_8.jpg" />
+    <Content Include="Content\images\faces\face_9.jpg" />
+    <Content Include="Content\images\goto_up.png" />
+    <Content Include="Content\images\hover_effect.png" />
+    <Content Include="Content\images\how_work_bg.png" />
+    <Content Include="Content\images\images\1.jpg" />
+    <Content Include="Content\images\images\2.jpg" />
+    <Content Include="Content\images\images\3.jpg" />
+    <Content Include="Content\images\images\4.jpg" />
+    <Content Include="Content\images\images\5.jpg" />
+    <Content Include="Content\images\implementation_bg.png" />
+    <Content Include="Content\images\join_1.png" />
+    <Content Include="Content\images\join_2.png" />
+    <Content Include="Content\images\join_3.png" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\logo_black.png" />
+    <Content Include="Content\images\logo_white.png" />
+    <Content Include="Content\images\move_down.png" />
+    <Content Include="Content\images\person-square.png" />
+    <Content Include="Content\images\scroll-back.png" />
+    <Content Include="Content\images\slider_square.png" />
+    <Content Include="Content\images\slide_1.jpg" />
+    <Content Include="Content\images\slide_2.jpg" />
+    <Content Include="Content\images\slide_3.jpg" />
+    <Content Include="Content\images\slide_4.jpg" />
+    <Content Include="Content\images\slide_5.jpg" />
+    <Content Include="Content\images\slide_7.jpg" />
+    <Content Include="Content\images\small_logo.png" />
     <Content Include="favicon.ico" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\css\style.css" />
-    <Content Include="Scripts\admin\common.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
@@ -245,14 +293,16 @@
     <Content Include="Areas\Default\Views\User\RegisterSuccess.cshtml" />
     <Content Include="Areas\Default\Views\Shared\UploadTemplate.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\default\common.js" />
-    <Content Include="Scripts\default\edit-user.js" />
     <Content Include="Scripts\fineuploader-4.1.1.min.js" />
+    <Content Include="Scripts\index.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery.fineuploader-3.5.0.js" />
     <Content Include="Scripts\jquery.fineuploader-3.5.0.min.js" />
     <Content Include="Scripts\jquery.fineuploader-4.1.1.min.js" />
+    <Content Include="Scripts\jquery.scroll_to.js" />
+    <Content Include="Scripts\jquery.snapscroll.js" />
+    <Content Include="Scripts\menu-slider.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
