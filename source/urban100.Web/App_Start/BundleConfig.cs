@@ -27,8 +27,8 @@ namespace urban100.Web
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/css/bootstrap.css",
-                      "~/Content/css/style.css"));
+                      "~/Content/css/main.css"));
+
             bundles.Add(new StyleBundle("~/Content/css/admin").Include(
                 "~/Content/css/bootstrap.css",
                 "~/Content/css/PagedList.css",

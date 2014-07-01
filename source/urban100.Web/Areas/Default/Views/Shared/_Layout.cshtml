@@ -1,42 +1,34 @@
 ﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
-    @RenderSection("styles", false)
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-
-</head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">urban100</a>
-            </div>
-            <div class="collapse navbar-collapse pull-right">
-                <ul class="nav navbar-nav">
-                    @Html.Action("UserLogin", "Home")
-                </ul>
-            </div><!--/.nav-collapse -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Urban 100</title>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+        @Styles.Render("~/Content/css")
+        <link href='css/main.css'  rel="stylesheet" type="text/css" />
+	</head>
+    <body>
+        <div class="menu-wrapper">
+            <ul class="menu">
+                <li><a href="#slide1">Урбан сотня</a></li>
+                <li><a href="#slide2">Ідея проекту</a></li>
+                <li><a href="#slide3">Urban Space</a></li>
+                <li><a href="#slide4">Реалізація</a></li>
+                <li><a href="#slide5">Як це працює</a></li>
+                <li><a href="#slide6">Долучитися</a></li>
+                <li><a href="#slide7">Контакти</a></li>
+                <li><a href="#slide8">FAQ</a></li>
+                <li class='slider' id="menuSlider">    			
+                </li>
+            </ul>
         </div>
-    </div>
-    <div class="container">
-        <div class="main-template">
-            @RenderBody()
-        </div>
-    </div>
-</body>
-@MiniProfiler.RenderIncludes()
-
-@Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/bundles/bootstrap")
-@RenderSection("header", false)
-</body>
+        @RenderBody()
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/Scripts/jquery.scroll_to.js")
+        @Scripts.Render("~/Scripts/jquery.snapscroll.js")
+        @Scripts.Render("~/Scripts/menu-slider.js")
+        @Scripts.Render("~/Scripts/index.js")
+    </body>
 </html>
