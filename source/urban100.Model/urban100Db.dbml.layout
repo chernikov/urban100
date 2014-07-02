@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="urban100Db">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.75" name="urban100Db">
   <DataContextMoniker Name="/urban100DbDataContext" />
   <nestedChildShapes>
     <classShape Id="fb4247ad-6bb0-4804-a138-3763ff63a987" absoluteBounds="0.75, 2.25, 2, 1.3862939453124998">
@@ -27,12 +27,18 @@
         <classShapeMoniker Id="c7239783-2f58-460a-973e-d792b4de9061" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(3 : 6.86620198567708); (4.5 : 6.86620198567708); (4.5 : 3.6362939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3 : 8.04250325520833); (4.09375 : 8.04250325520833); (4.09375 : 3.6362939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/urban100DbDataContext/User/User_UserRole" />
       <nodes>
         <classShapeMoniker Id="19ed4029-9383-4f2a-b853-ff61a323b093" />
         <classShapeMoniker Id="c7239783-2f58-460a-973e-d792b4de9061" />
       </nodes>
     </associationConnector>
+    <classShape Id="5de2ce78-4f0c-4834-bbcf-c4e70142ee54" absoluteBounds="5.875, 5.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/urban100DbDataContext/Owner" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fb242ff2-b781-4b40-bd65-146e43bf45a3" absoluteBounds="5.89, 6.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

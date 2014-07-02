@@ -1,8 +1,8 @@
-﻿@{
+﻿@model IList<Owner>
+@{
     Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "urban100";
 }
-
 	<ul class="content">
         <li class="slide slide1" id="slide1" data-id="1">
             <div id="content1" class="wrapper hundred-wrapper">
@@ -11,139 +11,98 @@
                     <div class="row">
                         <div class="cell"></div>
                         <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell active">
-                            <img src="/Content/images/faces/face_1.jpg" /></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
+                        @for(int i = 0; i < 13; i++)
+                        {
+                            if (Model.Any(p => p.Cell == i)) 
+                            {
+                                <div class="cell active">
+                                    <img src="@Model.First(p => p.Cell == i).Image?w=120&h=120&mode=crop" />
+                                    @Html.Partial("Tooltip", @Model.First(p => p.Cell == i))
+                                </div>
+                            } else {
+                                <div class="cell"></div>
+                            }
+                        }
                     </div>
                     <div class="row">
                         <div class="cell"></div>
                         <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell active">
-                            <img src="/Content/images/faces/face_2.jpg" /></div>
-                        <div class="cell active">
-                            <img src="/Content/images/faces/face_3.jpg" /></div>
-                        <div class="cell"></div>
-                        <div class="cell active">
-                            <img src="/Content/images/faces/face_4.jpg" /></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
+                        @for(int i = 13; i < 26; i++)
+                        {
+                            if (Model.Any(p => p.Cell == i)) 
+                            {
+                                <div class="cell active">
+                                    <img src="@Model.First(p => p.Cell == i).Image?w=120&h=120&mode=crop" />
+                                </div>
+                            } else {
+                                <div class="cell"></div>
+                            }
+                        }
                     </div>
                     <div class="row">
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell active">
-                            <img src="/Content/images/faces/face_5.jpg" /></div>
-                        <div class="cell active">
-                            <img src="/Content/images/faces/face_6.jpg" /></div>
-                        <div class="cell active">
-                            <img src="/Content/images/faces/face_7.jpg" /></div>
-                        <div class="cell active">
-                            <img src="/Content/images/faces/face_8.jpg" /></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell active">
-                            <img src="/Content/images/faces/face_9.jpg" /></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
+                        @for(int i = 26; i < 41; i++)
+                        {
+                            if (Model.Any(p => p.Cell == i)) 
+                            {
+                                <div class="cell active">
+                                    <img src="@Model.First(p => p.Cell == i).Image?w=120&h=120&mode=crop" />
+                                </div>
+                            } else {
+                                <div class="cell"></div>
+                            }
+                        }
                     </div>
                     <div class="row">
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell active">
-                            <img src="/Content/images/faces/face_10.jpg" /></div>
-                        <div class="cell"></div>
-                        <div class="cell active">
-                            <img src="/Content/images/faces/face_11.jpg" /></div>
-                        <div class="cell active">
-                            <img src="/Content/images/faces/face_12.jpg" /></div>
-                        <div class="cell active">
-                            <img src="/Content/images/faces/face_13.jpg" /></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell active">
-                            <img src="/Content/images/faces/face_14.jpg" /></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
+                        @for(int i = 41; i < 56; i++)
+                        {
+                            if (Model.Any(p => p.Cell == i)) 
+                            {
+                                <div class="cell active">
+                                    <img src="@Model.First(p => p.Cell == i).Image?w=120&h=120&mode=crop" />
+                                </div>
+                            } else {
+                                <div class="cell"></div>
+                            }
+                        }
                     </div>
                     <div class="row">
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell active">
-                            <img src="/Content/images/faces/face_18.jpg" /></div>
-                        <div class="cell active">
-                            <img src="/Content/images/faces/face_17.jpg" /></div>
-                        <div class="cell active">
-                            <img src="/Content/images/faces/face_16.jpg" /></div>
-                        <div class="cell active">
-                            <img src="/Content/images/faces/face_15.jpg" /></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
+                        @for(int i = 56; i < 71; i++)
+                        {
+                            if (Model.Any(p => p.Cell == i)) 
+                            {
+                                <div class="cell active">
+                                    <img src="@Model.First(p => p.Cell == i).Image?w=120&h=120&mode=crop" />
+                                </div>
+                            } else {
+                                <div class="cell"></div>
+                            }
+                        }
                     </div>
                     <div class="row">
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell active">
-                            <img src="/Content/images/faces/face_20.jpg" /></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
+                        @for(int i = 71; i < 86; i++)
+                        {
+                            if (Model.Any(p => p.Cell == i)) 
+                            {
+                                <div class="cell active">
+                                    <img src="@Model.First(p => p.Cell == i).Image?w=120&h=120&mode=crop" />
+                                </div>
+                            } else {
+                                <div class="cell"></div>
+                            }
+                        }
                     </div>
                     <div class="row">
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
+                        @for(int i = 86; i < 100; i++)
+                        {
+                            if (Model.Any(p => p.Cell == i)) 
+                            {
+                                <div class="cell active">
+                                    <img src="@Model.First(p => p.Cell == i).Image?w=120&h=120&mode=crop" />
+                                </div>
+                            } else {
+                                <div class="cell"></div>
+                            }
+                        }
                         <button class="add"></button>
                     </div>
                 </div>
@@ -151,7 +110,7 @@
                     <div class="progressed" style="width: 342px;"></div>
                 </div>
                 <div class="progress-info">
-                    19 / 100
+                    @Model.Count / 100
                 </div>
             </div>
         </li>

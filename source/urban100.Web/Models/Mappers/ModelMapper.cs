@@ -12,6 +12,7 @@ namespace urban100.Web.Models.Mappers
         {
             MapperCollection.LoginUserMapper.Init();
             MapperCollection.UserMapper.Init();
+            MapperCollection.OwnerMapper.Init();
         }
 
         public object Map(object source, Type sourceType, Type destinationType)

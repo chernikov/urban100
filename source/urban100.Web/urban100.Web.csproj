@@ -14,7 +14,7 @@
     <RootNamespace>urban100.Web</RootNamespace>
     <AssemblyName>urban100.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <MvcBuildViews>true</MvcBuildViews>
+    <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -150,7 +150,6 @@
     <Folder Include="Areas\Default\Models\" />
     <Folder Include="Content\files\uploads\" />
     <Folder Include="Content\logs\" />
-    <Folder Include="Scripts\admin\" />
     <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
@@ -161,6 +160,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OwnerController.cs" />
     <Compile Include="Areas\Admin\Controllers\TestController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Default\Controllers\DefaultController.cs" />
@@ -168,7 +168,6 @@
     <Compile Include="Areas\Default\Controllers\FileController.cs" />
     <Compile Include="Areas\Default\Controllers\HomeController.cs" />
     <Compile Include="Areas\Default\Controllers\LoginController.cs" />
-    <Compile Include="Areas\Default\Controllers\UserController.cs" />
     <Compile Include="Areas\Default\DefaultAreaRegistration.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Global.asax.cs">
@@ -194,6 +193,7 @@
     <Compile Include="Models\Mappers\MapperCollection.cs" />
     <Compile Include="Models\Mappers\ModelMapper.cs" />
     <Compile Include="Models\ViewModels\LoginView.cs" />
+    <Compile Include="Models\ViewModels\OwnerView.cs" />
     <Compile Include="Models\ViewModels\User\BaseUserView.cs" />
     <Compile Include="Models\ViewModels\User\ChangePasswordView.cs" />
     <Compile Include="Models\ViewModels\User\ForgotPasswordView.cs" />
@@ -268,11 +268,12 @@
     <Content Include="favicon.ico" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\admin\edit-owner.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Default\Views\web.config" />
-    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Default\Views\Shared\_LoginLayout.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\AdminMenu.cshtml" />
     <Content Include="Areas\Admin\Views\User\Index.cshtml" />
@@ -280,8 +281,6 @@
     <Content Include="Areas\Default\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Default\Views\Home\Index.cshtml" />
     <Content Include="Areas\Default\Views\Home\UserLogin.cshtml" />
-    <Content Include="Areas\Default\Views\Login\ForgotPassword.cshtml" />
-    <Content Include="Areas\Default\Views\Login\ForgotPasswordSuccess.cshtml" />
     <Content Include="Areas\Default\Views\Login\Index.cshtml" />
     <Content Include="Areas\Default\Views\Error\Index.cshtml" />
     <Content Include="Areas\Default\Views\Error\NotFoundPage.cshtml" />
@@ -292,6 +291,26 @@
     <Content Include="Areas\Default\Views\User\Register.cshtml" />
     <Content Include="Areas\Default\Views\User\RegisterSuccess.cshtml" />
     <Content Include="Areas\Default\Views\Shared\UploadTemplate.cshtml" />
+    <Content Include="CodeTemplates\Scaffolders\Controller\Controller.ps1" />
+    <Content Include="CodeTemplates\Scaffolders\Controller\ControllerTemplate.cs.t4" />
+    <Content Include="CodeTemplates\Scaffolders\EditView\EditView.ps1" />
+    <Content Include="CodeTemplates\Scaffolders\EditView\EditViewTemplate.cs.t4" />
+    <Content Include="CodeTemplates\Scaffolders\IndexView\IndexView.ps1" />
+    <Content Include="CodeTemplates\Scaffolders\IndexView\IndexViewTemplate.cs.t4" />
+    <Content Include="CodeTemplates\Scaffolders\Model\CommonMapper.cs.t4" />
+    <Content Include="CodeTemplates\Scaffolders\Model\CommonMapper.ps1" />
+    <Content Include="CodeTemplates\Scaffolders\Model\MapperCollection.ps1" />
+    <Content Include="CodeTemplates\Scaffolders\Model\MapperCollectionItemTemplate.cs.t4" />
+    <Content Include="CodeTemplates\Scaffolders\Model\MapperCollectionTemplate.cs.t4" />
+    <Content Include="CodeTemplates\Scaffolders\Model\Model.ps1" />
+    <Content Include="CodeTemplates\Scaffolders\Model\ModelTemplate.cs.t4" />
+    <Content Include="CodeTemplates\Scaffolders\SelectReference\SelectReference.ps1" />
+    <Content Include="CodeTemplates\Scaffolders\SelectReference\SelectReferenceTemplate.cs.t4" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Owner\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Owner\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\UploadTemplate.cshtml" />
+    <Content Include="Areas\Default\Views\Home\Tooltip.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\fineuploader-4.1.1.min.js" />
     <Content Include="Scripts\index.js" />

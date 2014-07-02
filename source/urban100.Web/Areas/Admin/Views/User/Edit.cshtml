@@ -4,6 +4,14 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
+@section styles {
+    @Styles.Render("~/Content/css/fineuploader")
+}
+@section header
+{
+    @Scripts.Render("~/bundles/fineuploader")
+    <script type="text/javascript" src="/Scripts/admin/edit-owner.js"></script>
+}
 <h2>@(Model.ID == 0 ? "Добавить пользователя" : "Изменить пользователя")</h2>
 <p></p>
 @using (Html.BeginForm("Edit", "User", FormMethod.Post, new { @class = "form-horizontal" }))
@@ -43,7 +51,14 @@
                 @Html.ValidationMessage("LastName")
             </div>
         </div>
-      
+        <div class="col-md-3">
+            <img src="@Model.FullAvatarPath" alt="@Model.FirstName" id="AvatarImage" />
+            <br />
+            <br />
+            <div id="ChangeAvatar">Change</div>
+            @Html.Partial("UploadTemplate")
+            
+        </div>
         <div class="form-actions">
             <button type="submit" class="btn btn-primary">
                 Сохранить

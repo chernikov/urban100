@@ -47,5 +47,17 @@ namespace urban100.Model
         bool RemoveUserRole(int idUserRole);
 
         #endregion
+
+        #region Owner
+        
+        IQueryable<Owner> Owners { get; }
+        
+        bool CreateOwner(Owner instance);
+        
+        bool UpdateOwner(Owner instance);
+        
+        bool RemoveOwner(int idOwner);
+        
+        #endregion 
     }
 }

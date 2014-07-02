@@ -31,5 +31,15 @@ namespace urban100.Web.Models.Mappers
                 Mapper.CreateMap<UserView, User>();
             }
         }
+
+        
+        public static class OwnerMapper
+        {
+        	public static void Init()
+        	{
+        		Mapper.CreateMap<Owner, OwnerView>();
+        		Mapper.CreateMap<OwnerView, Owner>();
+        	}
+        }
     }
 }

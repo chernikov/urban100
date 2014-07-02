@@ -32,5 +32,15 @@ namespace urban100.Model.Properties {
                 return ((string)(this["urban1005ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SATURN\\MSSQL;Initial Catalog=urban100.Db;Integrated Security=True")]
+        public string urban100_DbConnectionString {
+            get {
+                return ((string)(this["urban100_DbConnectionString"]));
+            }
+        }
     }
 }

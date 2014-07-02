@@ -50,10 +50,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Proxy\Owner.cs" />
     <Compile Include="Proxy\Role.cs" />
     <Compile Include="Proxy\User.cs" />
     <Compile Include="Proxy\UserRole.cs" />
     <Compile Include="SqlRepository.cs" />
+    <Compile Include="SqlRepository\Owner.cs" />
     <Compile Include="SqlRepository\Role.cs" />
     <Compile Include="SqlRepository\User.cs" />
     <Compile Include="SqlRepository\UserRole.cs" />
@@ -65,6 +67,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="CodeTemplates\Scaffolders\IRepository\IRepository.ps1" />
+    <None Include="CodeTemplates\Scaffolders\IRepository\IRepositoryItemTemplate.cs.t4" />
+    <None Include="CodeTemplates\Scaffolders\IRepository\IRepositoryTemplate.cs.t4" />
+    <None Include="CodeTemplates\Scaffolders\ProviderRepository\ProviderRepository.ps1" />
+    <None Include="CodeTemplates\Scaffolders\Proxy\Proxy.ps1" />
+    <None Include="CodeTemplates\Scaffolders\Proxy\ProxyLangTemplate.cs.t4" />
+    <None Include="CodeTemplates\Scaffolders\Proxy\ProxyTemplate.cs.t4" />
+    <None Include="CodeTemplates\Scaffolders\SqlRepository\SqlRepository.ps1" />
+    <None Include="CodeTemplates\Scaffolders\SqlRepository\SqlRepositoryLangTemplate.cs.t4" />
+    <None Include="CodeTemplates\Scaffolders\SqlRepository\SqlRepositoryTemplate.cs.t4" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

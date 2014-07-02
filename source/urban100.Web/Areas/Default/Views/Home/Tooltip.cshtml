@@ -1,0 +1,32 @@
+﻿@model Owner
+
+<div class="tooltip">
+    <div class="close"></div>
+    <h2>@Model.Name</h2>
+    @if (!string.IsNullOrWhiteSpace(@Model.SubTitle)) 
+    {
+        <div class="sub-title">@Model.SubTitle</div>
+    }
+    <div class="links">
+        @if (!string.IsNullOrWhiteSpace(@Model.Twitter)) 
+        {
+            <a href="@Model.Twitter" class="twitter"></a>
+        }
+        @if (!string.IsNullOrWhiteSpace(@Model.Facebook)) 
+        {
+            <a href="@Model.Facebook" class="facebook"></a>
+        }
+        @if (!string.IsNullOrWhiteSpace(@Model.Google)) 
+        {
+            <a href="@Model.Google" class="google"></a>
+        }
+        @if (!string.IsNullOrWhiteSpace(@Model.Instagram)) 
+        {
+            <a href="@Model.Instagram" class="instagram"></a>
+        }
+        @if (!string.IsNullOrWhiteSpace(@Model.Skype)) 
+        {
+            <a href="@Model.Skype" class="skype"></a>
+        }
+    </div>
+</div>

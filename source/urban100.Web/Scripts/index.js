@@ -28,6 +28,17 @@ function Index() {
 			_this.movePage($("#slide1"));
 		});
 		
+		$(".cell.active").click(function ()
+		{
+		    $(".tooltip").hide();
+		    $(".tooltip", $(this)).show();
+		});
+
+		$(".tooltip .close").click(function()
+		{
+		    $(".tooltip").hide();
+		});
+		$(".tooltip").hide();
 	};
 
     this.initSnapscroll = function() {
@@ -58,6 +69,7 @@ function Index() {
 	
 	this.setSlider = function(id) 
 	{
+	    $(".tooltip").hide();
 		if (id == 1) {
 			$("#rightMenu").hide();	
 			$("#gotoUp").hide();

@@ -1,0 +1,126 @@
+﻿@model urban100.Web.Models.ViewModels.OwnerView
+@{
+    ViewBag.Title = Model.ID == 0 ? "Добавить владельца" : "Изменить владельца";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section styles {
+    @Styles.Render("~/Content/css/fineuploader")
+}
+@section header
+{
+    @Scripts.Render("~/bundles/fineuploader")
+    <script type="text/javascript" src="/Scripts/admin/edit-owner.js"></script>
+}
+<h2>@(Model.ID == 0 ? "Добавить владельца" : "Изменить владельца")</h2>
+<p></p>
+@using (Html.BeginForm("Edit", "Owner", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <fieldset>
+        @Html.Hidden("ID", Model.ID)
+        @Html.Hidden("Image", Model.Image)
+        <div class="form-group @Html.HasErrorClass("Name", "has-error")">
+            <label class="col-sm-3 control-label" for="Name">
+                Имя
+            </label>
+            <div class="col-sm-5">
+                @Html.TextBox("Name", Model.Name, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("Name")
+            </div>
+        </div>
+        
+        <div class="form-group @Html.HasErrorClass("SubTitle", "has-error")">
+            <label class="col-sm-3 control-label" for="SubTitle">
+                Подпись
+            </label>
+            <div class="col-sm-5">
+                @Html.TextBox("SubTitle", Model.SubTitle, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("SubTitle")
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-3">
+                <img src="@Model.FullImage" alt="@Model.Name" id="AvatarImage" />
+                <br />
+                <br />
+                <div id="ChangeAvatar">Change</div>
+                @Html.Partial("UploadTemplate")
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("Twitter", "has-error")">
+            <label class="col-sm-3 control-label" for="Twitter">
+                Twitter
+            </label>
+            <div class="col-sm-5">
+                @Html.TextBox("Twitter", Model.Twitter, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("Twitter")
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("Facebook", "has-error")">
+            <label class="col-sm-3 control-label" for="Facebook">
+                Facebook
+            </label>
+            <div class="col-sm-5">
+                @Html.TextBox("Facebook", Model.Facebook, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("Facebook")
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("Google", "has-error")">
+            <label class="col-sm-3 control-label" for="Google">
+                Google
+            </label>
+            <div class="col-sm-5">
+                @Html.TextBox("Google", Model.Google, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("Google")
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("Instagram", "has-error")">
+            <label class="col-sm-3 control-label" for="Instagram">
+                Instagram
+            </label>
+            <div class="col-sm-5">
+                @Html.TextBox("Instagram", Model.Instagram, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("Instagram")
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("Skype", "has-error")">
+            <label class="col-sm-3 control-label" for="Skype">
+                Skype
+            </label>
+            <div class="col-sm-5">
+                @Html.TextBox("Skype", Model.Skype, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("Skype")
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("Cell", "has-error")">
+            <label class="col-sm-3 control-label" for="Cell">
+                Ячейка
+            </label>
+            <div class="col-sm-5">
+                @Html.DropDownList("Cell", Model.SelectListCell, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("Cell")
+            </div>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                Сохранить
+            </button>
+            @Html.ActionLink("Отмена", "Index", null, null, new { @class = "btn" })
+        </div>
+    </fieldset>
+}

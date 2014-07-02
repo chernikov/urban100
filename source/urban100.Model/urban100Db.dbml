@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="urban1005" Class="urban100DbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=SATURN\MSSQL;Initial Catalog=urban1005;Integrated Security=True" SettingsObjectName="urban100.Model.Properties.Settings" SettingsPropertyName="urban1005ConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="urban100.Db" Class="urban100DbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SATURN\MSSQL;Initial Catalog=urban100.Db;Integrated Security=True" SettingsObjectName="urban100.Model.Properties.Settings" SettingsPropertyName="urban100_DbConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Role" Member="Roles">
     <Type Name="Role">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -30,6 +30,20 @@
       <Column Name="FirstName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
       <Column Name="LastName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
       <Association Name="User_UserRole" Member="UserRoles" ThisKey="ID" OtherKey="UserID" Type="UserRole" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Owner" Member="Owners">
+    <Type Name="Owner">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SubTitle" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Twitter" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Facebook" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Google" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Instagram" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Skype" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Cell" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

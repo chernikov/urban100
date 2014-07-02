@@ -10,7 +10,8 @@ namespace urban100.Web.Areas.Default.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var list = Repository.Owners.ToList();
+            return View(list);
         }
 
         public ActionResult UserLogin()

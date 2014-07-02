@@ -25,7 +25,7 @@ namespace urban100.Web.Areas.Default.Controllers
                 var user = Auth.Login(loginView.Email, loginView.Password, loginView.IsPersistent);
                 if (user != null)
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Home", new { area = "Admin" });
                 }
                 ModelState.AddModelError("Password", "Password doesn't match");
             }
@@ -36,31 +36,6 @@ namespace urban100.Web.Areas.Default.Controllers
         {
             Auth.LogOut();
             return RedirectToAction("Index", "Home");
-        }
-
-        [HttpGet]
-        public ActionResult ForgotPassword()
-        {
-            return View(new ForgotPasswordView());
-        }
-
-        [HttpPost]
-        public ActionResult ForgotPassword(ForgotPasswordView forgotPasswordView)
-        {
-            if (ModelState.IsValid)
-            {
-                var user =
-                    Repository.Users.FirstOrDefault(p => string.Compare(p.Email, forgotPasswordView.Email, true) == 0);
-                if (user != null)
-                {
-                    NotifyMail.SendNotify("ForgotPassword", user.Email,
-                                                format => string.Format(format, HostName),
-                                                format => string.Format(format, user.Email, user.Password, HostName));
-                    return View("ForgotPasswordSuccess");
-                }
-                ModelState.AddModelError("Email", "Email user not found");
-            }
-            return View(forgotPasswordView);
         }
     }
 }

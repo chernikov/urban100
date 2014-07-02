@@ -22,7 +22,7 @@ namespace urban100.Model
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="urban1005")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="urban100.Db")]
 	public partial class urban100DbDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -39,10 +39,13 @@ namespace urban100.Model
     partial void InsertUser(User instance);
     partial void UpdateUser(User instance);
     partial void DeleteUser(User instance);
+    partial void InsertOwner(Owner instance);
+    partial void UpdateOwner(Owner instance);
+    partial void DeleteOwner(Owner instance);
     #endregion
 		
 		public urban100DbDataContext() : 
-				base(global::urban100.Model.Properties.Settings.Default.urban1005ConnectionString, mappingSource)
+				base(global::urban100.Model.Properties.Settings.Default.urban100_DbConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -92,6 +95,14 @@ namespace urban100.Model
 			get
 			{
 				return this.GetTable<User>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Owner> Owners
+		{
+			get
+			{
+				return this.GetTable<Owner>();
 			}
 		}
 	}
@@ -729,6 +740,284 @@ namespace urban100.Model
 		{
 			this.SendPropertyChanging();
 			entity.User = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Owner")]
+	public partial class Owner : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _Name;
+		
+		private string _SubTitle;
+		
+		private string _Image;
+		
+		private string _Twitter;
+		
+		private string _Facebook;
+		
+		private string _Google;
+		
+		private string _Instagram;
+		
+		private string _Skype;
+		
+		private int _Cell;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnSubTitleChanging(string value);
+    partial void OnSubTitleChanged();
+    partial void OnImageChanging(string value);
+    partial void OnImageChanged();
+    partial void OnTwitterChanging(string value);
+    partial void OnTwitterChanged();
+    partial void OnFacebookChanging(string value);
+    partial void OnFacebookChanged();
+    partial void OnGoogleChanging(string value);
+    partial void OnGoogleChanged();
+    partial void OnInstagramChanging(string value);
+    partial void OnInstagramChanged();
+    partial void OnSkypeChanging(string value);
+    partial void OnSkypeChanged();
+    partial void OnCellChanging(int value);
+    partial void OnCellChanged();
+    #endregion
+		
+		public Owner()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubTitle", DbType="NVarChar(150)")]
+		public string SubTitle
+		{
+			get
+			{
+				return this._SubTitle;
+			}
+			set
+			{
+				if ((this._SubTitle != value))
+				{
+					this.OnSubTitleChanging(value);
+					this.SendPropertyChanging();
+					this._SubTitle = value;
+					this.SendPropertyChanged("SubTitle");
+					this.OnSubTitleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="NVarChar(150)")]
+		public string Image
+		{
+			get
+			{
+				return this._Image;
+			}
+			set
+			{
+				if ((this._Image != value))
+				{
+					this.OnImageChanging(value);
+					this.SendPropertyChanging();
+					this._Image = value;
+					this.SendPropertyChanged("Image");
+					this.OnImageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Twitter", DbType="NVarChar(150)")]
+		public string Twitter
+		{
+			get
+			{
+				return this._Twitter;
+			}
+			set
+			{
+				if ((this._Twitter != value))
+				{
+					this.OnTwitterChanging(value);
+					this.SendPropertyChanging();
+					this._Twitter = value;
+					this.SendPropertyChanged("Twitter");
+					this.OnTwitterChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Facebook", DbType="NVarChar(150)")]
+		public string Facebook
+		{
+			get
+			{
+				return this._Facebook;
+			}
+			set
+			{
+				if ((this._Facebook != value))
+				{
+					this.OnFacebookChanging(value);
+					this.SendPropertyChanging();
+					this._Facebook = value;
+					this.SendPropertyChanged("Facebook");
+					this.OnFacebookChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Google", DbType="NVarChar(250)")]
+		public string Google
+		{
+			get
+			{
+				return this._Google;
+			}
+			set
+			{
+				if ((this._Google != value))
+				{
+					this.OnGoogleChanging(value);
+					this.SendPropertyChanging();
+					this._Google = value;
+					this.SendPropertyChanged("Google");
+					this.OnGoogleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Instagram", DbType="NVarChar(150)")]
+		public string Instagram
+		{
+			get
+			{
+				return this._Instagram;
+			}
+			set
+			{
+				if ((this._Instagram != value))
+				{
+					this.OnInstagramChanging(value);
+					this.SendPropertyChanging();
+					this._Instagram = value;
+					this.SendPropertyChanged("Instagram");
+					this.OnInstagramChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Skype", DbType="NVarChar(150)")]
+		public string Skype
+		{
+			get
+			{
+				return this._Skype;
+			}
+			set
+			{
+				if ((this._Skype != value))
+				{
+					this.OnSkypeChanging(value);
+					this.SendPropertyChanging();
+					this._Skype = value;
+					this.SendPropertyChanged("Skype");
+					this.OnSkypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cell", DbType="Int NOT NULL")]
+		public int Cell
+		{
+			get
+			{
+				return this._Cell;
+			}
+			set
+			{
+				if ((this._Cell != value))
+				{
+					this.OnCellChanging(value);
+					this.SendPropertyChanging();
+					this._Cell = value;
+					this.SendPropertyChanged("Cell");
+					this.OnCellChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }
