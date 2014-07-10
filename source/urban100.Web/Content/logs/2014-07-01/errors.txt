@@ -1,0 +1,1 @@
+2014-07-01 15:55:28.1272|ERROR|urban100.Web.Global.Auth.CustomAuthentication|Failed authentication: Error occurred during a cryptographic operation.
