@@ -41,7 +41,7 @@ namespace urban100.Web.Global.Config
         {
             get
             {
-                MailTemplateConfig configInfo = (MailTemplateConfig)ConfigurationManager.GetSection("mailTemplatesConfig");
+                MailTemplateConfig configInfo = (MailTemplateConfig)ConfigurationManager.GetSection("mailTemplateConfig");
                 return configInfo.mailTemplates.OfType<MailTemplate>().AsQueryable<MailTemplate>();
             }
         }

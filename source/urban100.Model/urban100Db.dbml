@@ -42,8 +42,17 @@
       <Column Name="Facebook" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
       <Column Name="Google" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
       <Column Name="Instagram" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
-      <Column Name="Skype" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Tumblr" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
       <Column Name="Cell" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Candidate" Member="Candidates">
+    <Type Name="Candidate">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

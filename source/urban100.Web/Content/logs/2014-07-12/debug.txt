@@ -1,0 +1,3 @@
+2014-07-12 14:15:58.3217|DEBUG|urban100.Web.Mail.MailSender|Email :  
+ 	 Subject: Хочу стать участником Urban 100 А 
+ Body: Привет!<br/><br/>Меня зовут А <br/> Я хочу стать участником Urban100 потому что:<br/>  <br/> Мой телефон: 02  <br/> Мой email 

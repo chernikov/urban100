@@ -3,268 +3,326 @@
     Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "urban100";
 }
-	<ul class="content">
-        <li class="slide slide1" id="slide1" data-id="1">
-            <div id="content1" class="wrapper hundred-wrapper">
-                <div class="persons-table">
-                    <div class="logo"></div>
-                    <div class="row">
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        @for(int i = 0; i < 13; i++)
+<ul class="content">
+    <div id="PopupWrapper">
+        @Html.Action("AddPopup", "Home")
+    </div>
+    <li class="slide slide1" id="slide1" data-id="1">
+        <div id="content1" class="wrapper hundred-wrapper">
+            <div class="persons-table">
+                <div class="logo"></div>
+                <div class="row">
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    @for (int i = 0; i < 13; i++)
+                    {
+                        if (Model.Any(p => p.Cell == i))
                         {
-                            if (Model.Any(p => p.Cell == i)) 
-                            {
-                                <div class="cell active">
-                                    <img src="@Model.First(p => p.Cell == i).Image?w=120&h=120&mode=crop" />
-                                    @Html.Partial("Tooltip", @Model.First(p => p.Cell == i))
-                                </div>
-                            } else {
-                                <div class="cell"></div>
-                            }
-                        }
+                    <div class="cell active up @(i < 2 ? "left" : "") @(i > 8 ? "right" : "")">
+                        <img src="@Model.First(p => p.Cell == i).Image?w=120&h=120&mode=crop" />
+                        @Html.Partial("Tooltip", @Model.First(p => p.Cell == i))
                     </div>
-                    <div class="row">
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        @for(int i = 13; i < 26; i++)
+                        }
+                        else
                         {
-                            if (Model.Any(p => p.Cell == i)) 
-                            {
-                                <div class="cell active">
-                                    <img src="@Model.First(p => p.Cell == i).Image?w=120&h=120&mode=crop" />
-                                </div>
-                            } else {
-                                <div class="cell"></div>
-                            }
+                    <div class="cell"></div>
                         }
-                    </div>
-                    <div class="row">
-                        @for(int i = 26; i < 41; i++)
+                    }
+                </div>
+                <div class="row">
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    @for (int i = 13; i < 26; i++)
+                    {
+                        if (Model.Any(p => p.Cell == i))
                         {
-                            if (Model.Any(p => p.Cell == i)) 
-                            {
-                                <div class="cell active">
-                                    <img src="@Model.First(p => p.Cell == i).Image?w=120&h=120&mode=crop" />
-                                </div>
-                            } else {
-                                <div class="cell"></div>
-                            }
-                        }
+                    <div class="cell active up @(i < 15 ? "left" : "") @(i > 21 ? "right" : "")">
+                        <img src="@Model.First(p => p.Cell == i).Image?w=120&h=120&mode=crop" />
+                        @Html.Partial("Tooltip", @Model.First(p => p.Cell == i))
                     </div>
-                    <div class="row">
-                        @for(int i = 41; i < 56; i++)
+                        }
+                        else
                         {
-                            if (Model.Any(p => p.Cell == i)) 
-                            {
-                                <div class="cell active">
-                                    <img src="@Model.First(p => p.Cell == i).Image?w=120&h=120&mode=crop" />
-                                </div>
-                            } else {
-                                <div class="cell"></div>
-                            }
+                    <div class="cell"></div>
                         }
-                    </div>
-                    <div class="row">
-                        @for(int i = 56; i < 71; i++)
+                    }
+                </div>
+                <div class="row">
+                    @for (int i = 26; i < 41; i++)
+                    {
+                        if (Model.Any(p => p.Cell == i))
                         {
-                            if (Model.Any(p => p.Cell == i)) 
-                            {
-                                <div class="cell active">
-                                    <img src="@Model.First(p => p.Cell == i).Image?w=120&h=120&mode=crop" />
-                                </div>
-                            } else {
-                                <div class="cell"></div>
-                            }
-                        }
+                    <div class="cell active @(i < 30 ? "left" : "") @(i > 36 ? "right" : "")">
+                        <img src="@Model.First(p => p.Cell == i).Image?w=120&h=120&mode=crop" />
+                        @Html.Partial("Tooltip", @Model.First(p => p.Cell == i))
                     </div>
-                    <div class="row">
-                        @for(int i = 71; i < 86; i++)
+                        }
+                        else
                         {
-                            if (Model.Any(p => p.Cell == i)) 
-                            {
-                                <div class="cell active">
-                                    <img src="@Model.First(p => p.Cell == i).Image?w=120&h=120&mode=crop" />
-                                </div>
-                            } else {
-                                <div class="cell"></div>
-                            }
+                    <div class="cell"></div>
                         }
-                    </div>
-                    <div class="row">
-                        @for(int i = 86; i < 100; i++)
+                    }
+                </div>
+                <div class="row">
+                    @for (int i = 41; i < 56; i++)
+                    {
+                        if (Model.Any(p => p.Cell == i))
                         {
-                            if (Model.Any(p => p.Cell == i)) 
-                            {
-                                <div class="cell active">
-                                    <img src="@Model.First(p => p.Cell == i).Image?w=120&h=120&mode=crop" />
-                                </div>
-                            } else {
-                                <div class="cell"></div>
-                            }
-                        }
-                        <button class="add"></button>
+                    <div class="cell active @(i < 45 ? "left" : "") @(i > 51 ? "right" : "")">
+                        <img src="@Model.First(p => p.Cell == i).Image?w=120&h=120&mode=crop" />
+                        @Html.Partial("Tooltip", @Model.First(p => p.Cell == i))
                     </div>
+                        }
+                        else
+                        {
+                    <div class="cell"></div>
+                        }
+                    }
+                </div>
+                <div class="row">
+                    @for (int i = 56; i < 71; i++)
+                    {
+                        if (Model.Any(p => p.Cell == i))
+                        {
+                    <div class="cell active @(i < 60 ? "left" : "") @(i > 66 ? "right" : "")">
+                        <img src="@Model.First(p => p.Cell == i).Image?w=120&h=120&mode=crop" />
+                        @Html.Partial("Tooltip", @Model.First(p => p.Cell == i))
+                    </div>
+                        }
+                        else
+                        {
+                    <div class="cell"></div>
+                        }
+                    }
+                </div>
+                <div class="row">
+                    @for (int i = 71; i < 86; i++)
+                    {
+                        if (Model.Any(p => p.Cell == i))
+                        {
+                    <div class="cell active @(i < 75 ? "left" : "") @(i > 81 ? "right" : "")">
+                        <img src="@Model.First(p => p.Cell == i).Image?w=120&h=120&mode=crop" />
+                        @Html.Partial("Tooltip", @Model.First(p => p.Cell == i))
+                    </div>
+                        }
+                        else
+                        {
+                    <div class="cell"></div>
+                        }
+                    }
+                </div>
+                <div class="row">
+                    @for (int i = 86; i < 100; i++)
+                    {
+                        if (Model.Any(p => p.Cell == i))
+                        {
+                    <div class="cell active @(i < 90 ? "left" : "") @(i > 96 ? "right" : "")">
+                        <img src="@Model.First(p => p.Cell == i).Image?w=120&h=120&mode=crop" />
+                        @Html.Partial("Tooltip", @Model.First(p => p.Cell == i))
+                    </div>
+                        }
+                        else
+                        {
+                    <div class="cell"></div>
+                        }
+                    }
+                    <button class="add" id="ShowAddPopup"></button>
+                </div>
+            </div>
+            <div class="progress-line">
+                <div class="progressed" style="width: @(Model.Count * 18)px;"></div>
+            </div>
+            <div class="progress-info">
+                @Model.Count / 100
+            </div>
+        </div>
+    </li>
+    <li class="slide slide2" id="slide2" data-id="2">
+        <div class="wrapper idea-wrapper">
+            <h1>
+                Ідея проекту
+            </h1>
+            <p>
+                Створити громадський ресторан в Івано-Франківську  у форматі «Urban Space», що стане успішним прикладом об’єднання громади навколо спільної ідеї.
+            </p>
+            <p>
+                Унікальність проекту полягає в тому, що прибуток  ресторану направляється винятково на реалізацію громадських проектів міста. А засновниками є 100 соціально активних людей, що об’єднані ідеєю якісного розвитку міського простору.
+            </p>
+            <div class="logo"></div>
+        </div>
+    </li>
+    <li class="slide slide3" id="slide3" data-id="3">
+        <div class="wrapper urban-space-wrapper">
+            <div class="inner-wrapper">
+                <div class="urban-space">
+                    <h1>Urban Space</h1>
+                    <p>
+                        Сучасний формат на  перетині різних міських середовищ. Ресторан, в якому можна не лише поїсти, а й поспілкуватись, обговорити ідеї, знайти однодумців. А ще почитати книгу, придбати щось в крамниці, яка працює в ресторані, чи організувати власну презентацію. Це своєрідне місце зустрічі урбаністів- тих,хто вважає, що місто має бути комфортним для життя: зеленим, екологічним, відповідним до інтересів громади.
+                    </p>
                 </div>
                 <div class="progress-line">
-                    <div class="progressed" style="width: 342px;"></div>
+                    <div class="progressed" style="width: 240px"></div>
                 </div>
-                <div class="progress-info">
-                    @Model.Count / 100
-                </div>
+                <ul class="switcher">
+                    <li class="item active" data-num="1"></li>
+                    <li class="item" data-num="2"></li>
+                    <li class="item" data-num="3"></li>
+                </ul>
             </div>
-        </li>
-        <li class="slide slide2" id="slide2" data-id="2">
-            <div class="wrapper idea-wrapper">
-                <h1>Ідея проекту
-                </h1>
-                <p>
-                    Створити громадський ресторан в Івано-Франківську у форматі «Urban Space», що стане успішним прикладом об’єднання громади навколо спільної ідеї. Унікальність проекту в тому, що прибуток ресторану направляється виключно на реалізацію громадських проектів міста. 
-                </p>
-                <p>
-                    Засновниками є 100 соціально активних людей, яких об’єднує ідея якісного розвитку міського простору.
-                </p>
-                <div class="logo"></div>
-            </div>
-        </li>
-        <li class="slide slide3" id="slide3" data-id="3">
-            <div class="wrapper urban-space-wrapper">
-                <div class="inner-wrapper">
-                    <div class="urban-space">
-                        <h1>Urban Space</h1>
-                        <p>
-                            Сучасний формат на перетині різних міських середовищ. Ресторан, в якому можна не лише поїсти, а й поспілкуватись, обговорити ідеї, знайти однодумців. А ще почитати книгу, придбати щось в крамниці, яка працює в ресторані, чи організувати власну презентацію. 
-                        </p>
-                        <p>
-                            Це своєрідне місце зустрічі урбаністів — тих, хто вважає, що місто має бути комфортним для життя: зеленим, екологічним, відповідним до інтересів громади.
-                        </p>
-                    </div>
-                    <div class="progress-line">
-                        <div class="progressed" style="width: 240px"></div>
-                    </div>
-                    <ul class="switcher">
-                        <li class="item active" data-num="1"></li>
-                        <li class="item" data-num="2"></li>
-                        <li class="item" data-num="3"></li>
-                        <li class="item" data-num="4"></li>
-                        <li class="item" data-num="5"></li>
-                    </ul>
-                </div>
-                <div class="logo"></div>
-            </div>
-        </li>
-        <li class="slide slide4" id="slide4" data-id="4">
-            <div class="wrapper implementation-wrapper">
-                <h1>Реалізація
-                </h1>
-                <p>
-                    100 засновників ресторану в рівних долях фінансують відкриття ресторану Urban Space 100.
-                </p>
-                <p>
-                    Розробку концепції, реалізацію проекту та відкриття закладу здійснює компанія «23 ресторани».
-                </p>
-                <p>
-                    Відкриття закладу заплановано на 1 жовтня 2014 року.
-                </p>
-                <div class="logo"></div>
-            </div>
-        </li>
-        <li class="slide slide5" id="slide5" data-id="5">
-            <div class="wrapper how-work-wrapper">
-                <h1>Як це працює
-                </h1>
-                <p>
-                    Ресторан працює та генерує прибуток, який направляється виключно на реалізацію громадських проектів, що розвивають та покращують міське середовища Івано-Франківська.
-                </p>
-                <p>
-                    Рішення про те, які проекти підтримати, приймають акціонери.
-                </p>
-                <p>
-                    Операційне управління Urban Space 100 забезпечує компанія «23 Ресторани».
-                </p>
-                <div class="logo"></div>
-            </div>
+            <div class="logo"></div>
+        </div>
+    </li>
+    <li class="slide slide4" id="slide4" data-id="4">
+        <div class="wrapper implementation-wrapper">
+            <h1>
+                Реалізація
+            </h1>
+            <p>
+                Проект фінансують 100 засновників.
+            </p>
+            <p>
+                Вони стають співвласниками громадського ресторану.
+            </p>
+            <p>
+                Розробку концепції, реалізацію проекту та відкриття закладу, а також поточне управління діяльністю забезпечує компанія «23 ресторани».
+            </p>
+            <div class="logo"></div>
+        </div>
+    </li>
+    <li class="slide slide5" id="slide5" data-id="5">
+        <div class="wrapper how-work-wrapper">
+            <h1>
+                Як це працює
+            </h1>
+            <p>
+                Ресторан працює та генерує прибуток, який направляється виключно на реалізацію громадських проектів, що розвивають та покращують міське середовища Івано-Франківська.
+            </p>
+            <p>
+                Рішення про те, які проекти підтримати, приймають акціонери.
+            </p>
+            <p>
+                Операційне управління Urban Space 100 забезпечує компанія «23 Ресторани».
+            </p>
+            <div class="logo"></div>
+        </div>
 
-        </li>
-        <li class="slide slide6" id="slide6" data-id="6">
-            <div class="wrapper join-wrapper">
-                <h1>Долучитися
-                </h1>
-                <h3>Підтримай проект та стань співзасновником ресторану Urban Space 100.
-                </h3>
+    </li>
+    <li class="slide slide6" id="slide6" data-id="6">
+        <div class="wrapper join-wrapper">
+            <h1>
+                Долучитися
+            </h1>
+            <h3>
+                Підтримай проект та стань співзасновником ресторану Urban Space 100.
+            </h3>
 
-                <ul class="join-list">
-                    <li class="join_1">збери три лайки від учасників	
+            <ul class="join-list">
+                <li class="join_1">
+                    збери три лайки від учасників
+                </li>
+                <li class="join_2">
+                    одноразовий безповоротний внесок
+                    в розмірі 1000 $
+                </li>
+                <li class="join_3">
+                    твори добро
+                </li>
+            </ul>
+        </div>
+    </li>
+    <li class="slide slide7" id="slide7" data-id="7">
+        <div class="wrapper contact-wrapper">
+            <div class="contacts">
+                <h1>Контакти</h1>
+                <ul class="contact-list">
+                    <li>
+                        <strong>Юлія Ляхович</strong> - координатор проекту<br />
+                        050 665 14 65
+                        <br />
+                        goldkey.if@gmail.com<br />
                     </li>
-                    <li class="join_2">одноразовий безповоротний внесок 
-					в розмірі 1000 $
-                    </li>
-                    <li class="join_3">твори добро
+                    <li>
+                        <strong>Юрій Филюк</strong> - верховний координатор проекту
+                        <br />
+                        066 453 65 46
+                        <br />
+                        yuriy.fylyuk@gmail.com<br />
                     </li>
                 </ul>
             </div>
-        </li>
-        <li class="slide slide7" id="slide7" data-id="7">
-            <div class="wrapper contact-wrapper">
-                <div class="contacts">
-                    <h1>Контакти</h1>
-                    <ul class="contact-list">
-                        <li>
-                            <strong>Юлія Ляхович</strong> - координатор проекту<br />
-                            050 665 14 65
-                            <br />
-                            goldkey.if@gmail.com<br />
-                        </li>
-                        <li>
-                            <strong>Юрій Филюк</strong> - верховний координатор проекту
-                            <br />
-                            066 453 65 46
-                            <br />
-                            yuriy.fylyuk@gmail.com<br />
-                        </li>
-                    </ul>
-                </div>
-                <div class="logo"></div>
-            </div>
-        </li>
-        <li class="slide slide8" id="slide8" data-id="8">
-            <div class="wrapper faq-wrapper">
-                <h1>faq</h1>
-                <ul class="faq">
-                    <li>
-                        <h2>1. Як стати учасником проекту?</h2>
-                        <p>
-                            Для участі у проекті потрібно отримати три позитивних рекомендації від діючих учасників проекту (посилання на тих, хто вже в проекті- перелік ???), погодитись на відкриту участь та внести суму 1000 у.о.
-                        </p>
-                    </li>
-                    <li>
-                        <h2>2. Хто не може бути співвласником ресторану?</h2>
-                        <p>
-                            Співвласником ресторану не може бути анонімна особа чи суб’єкт господарської діяльності, зареєстрований як юридична особа.
-                        </p>
-                    </li>
-                    <li>
-                        <h2>3. Чи можна робити внесок в кілька етапів?</h2>
-                        <p>
-                            Так, можна розподілити суму внеску на три однакові частини, і сплатити її за три місяці.
-                        </p>
-                    </li>
-                    <li>
-                        <h2>4. Що таке «відкрита участь»?</h2>
-                        <p>Погодившись підтримати проект, ви погоджуєтесь на те, що ваша участь у проекті буде відома іншим. Також ваше фото, прізвище та ім'я буде розташовано на головній сторінці сайту проекту серед інших засновників. Анонімна участь у проекті неможлива.</p>
-                    </li>
-                    <li>
-                        <h2>5. Коли буде відкрито Urban Space 100?</h2>
-                        <p>Відкриття закладу заплановано на 1 жовтня 2014 року.</p>
-                    </li>
-                </ul>
-                <div class="footer">
-                    <span class="if-logo"></span>Зроблено в Івано-Франківську
-                </div>
-            </div>
+            <div class="logo"></div>
+        </div>
+    </li>
+    <li class="slide slide8" id="slide8" data-id="8">
+        <div class="wrapper faq-wrapper">
+            <h1>faq</h1>
+            <ul class="faq">
+                <li>
+                    <h2>1. Як стати учасником проекту?</h2>
+                    <p>
+                        Для участі у проекті потрібно отримати три позитивних рекомендації від діючих учасників проекту,погодитись на відкриту участь у ньому та внести одноразовий благодійний внесок у розмірі 1000 у.о.
+                    </p>
+                </li>
 
-        </li>
-    </ul>
+                <li>
+                    <h2> 2. Хто не може бути співвласником ресторану?</h2>
+                    <p>
+                        Співвласником ресторану не може бути анонімна особа чи суб’єкт господарської діяльності, зареєстрований як юридична особа.
+                    </p>
+                </li>
+                <li>
+                    <h2> 3. Чи можна робити внесок у  кілька етапів?</h2>
+                    <p>
+                        Так, можна розподілити суму внеску на три рівні частини, і сплатити її протягом трьох місяців, але не пізніше 15 листопада 2014 року.
+
+                    </p>
+                </li>
+                <li>
+                    <h2>   4. Що таке «відкрита участь»? </h2>
+                    <p>
+                        Погодившись підтримати проект, ви погоджуєтесь на те, що ваша участь у проекті буде відома іншим. Зокрема, ваше фото, прізвище та ім'я будуть розміщені на головній сторінці сайту проекту з-поміж інших засновників. Анонімна участь у проекті неможлива.
+
+                    </p>
+                </li>
+                <li>
+                    <h2>   5. Що буде в разі, якщо проект себе вичерпає?</h2>
+                    <p>
+                        Це може статись лише в разі настання неприбутковості проекту, що є маловірогідним. Тим не менш, управлінська компанія «23 Ресторани» гарантує забезпечення діяльності Urban Space 100 протягом мінімум двох років з моменту відкриття.
+
+                    </p>
+                </li>
+                <li>
+                    <h2>  6. Чи потрібно буде ще додатково щось фінансувати?</h2>
+                    <p>
+                        Ні, цього не передбачається.
+                    </p>
+                </li>
+                <li>
+                    <h2>
+                        7. Яким чином відбувається передача коштів, яке юридичне оформлення.
+                    </h2>
+                    <p>
+                        Кошти зараховуються на офіційний рахунок ГО «Тепле Місто» у вигляді добровільних благодійних внесків. Учасники проекту Urban Space 100 набувають членство в  Громадській Організації «Тепле місто». Всіма активами ресторану Urban Space 100 володітиме саме ГО «Тепле Місто», яка в свою чергу передасть їх в управління компанії «23 ресторани» для здійснення комерційної діяльності. Управлінська компанія за рішенням засновників при необхідності може змінюватись.
+
+                    </p>
+                </li>
+                <li>
+                    <h2>
+                        8. Яким чином розприділяються прибутки?
+                    </h2>
+                    <p>
+                        Щокварталу безпосередньо у приміщенні ресторану відбуватимуться збори 100 засновників, які і вирішуватимуть, на які проекти направляти зароблені за звітний період кошти. Рішення приймаються простою більшістю від загальної кількості присутніх на зборах. Згідно статуту ГО «Тепле Місто» зароблені рестораном кошти можуть направлятись виключно на громадські проекти з розвитку міста.
+
+                    </p>
+                </li>
+            </ul>
+            <div class="footer">
+                <span class="if-logo"></span>Зроблено в Івано-Франківську
+            </div>
+        </div>
+
+    </li>
+</ul>
 <div class="slider-menu" id="rightMenu">
     <ul class="dots">
         <li class="dot" data-id="1"></li>

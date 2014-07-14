@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @author Chernikov
  */
 
@@ -6,7 +6,7 @@ function Index() {
 	var _this = this;
 	
 	this.num = 1;
-	this.maxNum = 5;
+	this.maxNum = 3;
 	this.animate = false;
     this.inProcess = false;
 	this.init = function ()
@@ -34,11 +34,60 @@ function Index() {
 		    $(".tooltip", $(this)).show();
 		});
 
-		$(".tooltip .close").click(function()
+		$(".tooltip .close").click(function(e)
 		{
 		    $(".tooltip").hide();
+		    e.stopPropagation();
 		});
 		$(".tooltip").hide();
+
+
+		$(document).on("click", ".add-popup .close, .add-popup .close-btn", function () {
+		    $("#PopupWrapper").empty();
+		});
+
+		$(document).on("change", "input[name=Ask]", function () {
+
+		    var value = $(this).val();
+		    $(".text-notes").hide();
+		    $(".text-notes[data-type="+value+"]").show();
+		});
+
+		$("#ShowAddPopup").click(function () {
+		    $.ajax({
+		        type: "GET",
+		        url: "/Home/AddPopup",
+		        success: function (data) {
+		            $("#PopupWrapper").html(data);
+		        }
+		    });
+		});
+
+		$(document).on("focus", "#Name", function () {
+		    $("#Name").attr("placeholder", "Імя, Прізвище");
+		    $("#Name").removeClass("error");
+		    $("#Name").removeClass("input-validation-error");
+		});
+
+		$(document).on("focus", "#Phone", function () {
+		    $("#Phone").attr("placeholder", "Телефон");
+		    $("#Phone").removeClass("error");
+		});
+		$(document).on("focus", "#Email", function () {
+		    $("#Email").attr("placeholder", "Електропошта");
+		    $("#Email").removeClass("error");
+		});
+		$(document).on("click", "#AddPopupBtn", function () {
+		    $.ajax({
+		        type: "POST",
+		        url: "/Home/AddPopup",
+		        data: $("#AddForm").serialize(),
+		        success: function (data) {
+		            $("#PopupWrapper").html(data);
+		        }
+		    });
+		    return false;
+		});
 	};
 
     this.initSnapscroll = function() {
@@ -70,6 +119,7 @@ function Index() {
 	this.setSlider = function(id) 
 	{
 	    $(".tooltip").hide();
+	    $("#PopupWrapper").empty();
 		if (id == 1) {
 			$("#rightMenu").hide();	
 			$("#gotoUp").hide();

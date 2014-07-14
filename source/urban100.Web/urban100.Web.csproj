@@ -150,6 +150,7 @@
     <Folder Include="Areas\Default\Models\" />
     <Folder Include="Content\files\uploads\" />
     <Folder Include="Content\logs\" />
+    <Folder Include="Views\Home\" />
     <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
@@ -192,6 +193,7 @@
     <Compile Include="Mail\NotifyMail.cs" />
     <Compile Include="Models\Mappers\MapperCollection.cs" />
     <Compile Include="Models\Mappers\ModelMapper.cs" />
+    <Compile Include="Models\ViewModels\CandidateOwnerView.cs" />
     <Compile Include="Models\ViewModels\LoginView.cs" />
     <Compile Include="Models\ViewModels\OwnerView.cs" />
     <Compile Include="Models\ViewModels\User\BaseUserView.cs" />
@@ -219,6 +221,8 @@
     <Content Include="Content\images\add.png" />
     <Content Include="Content\images\background.jpg" />
     <Content Include="Content\images\default_avatar.jpg" />
+    <Content Include="Content\images\facebook.png" />
+    <Content Include="Content\images\facebook_small.png" />
     <Content Include="Content\images\faces\face_1.jpg" />
     <Content Include="Content\images\faces\face_10.jpg" />
     <Content Include="Content\images\faces\face_11.jpg" />
@@ -239,6 +243,7 @@
     <Content Include="Content\images\faces\face_7.jpg" />
     <Content Include="Content\images\faces\face_8.jpg" />
     <Content Include="Content\images\faces\face_9.jpg" />
+    <Content Include="Content\images\google.png" />
     <Content Include="Content\images\goto_up.png" />
     <Content Include="Content\images\hover_effect.png" />
     <Content Include="Content\images\how_work_bg.png" />
@@ -248,6 +253,7 @@
     <Content Include="Content\images\images\4.jpg" />
     <Content Include="Content\images\images\5.jpg" />
     <Content Include="Content\images\implementation_bg.png" />
+    <Content Include="Content\images\instagram.png" />
     <Content Include="Content\images\join_1.png" />
     <Content Include="Content\images\join_2.png" />
     <Content Include="Content\images\join_3.png" />
@@ -257,6 +263,7 @@
     <Content Include="Content\images\move_down.png" />
     <Content Include="Content\images\person-square.png" />
     <Content Include="Content\images\scroll-back.png" />
+    <Content Include="Content\images\skype.png" />
     <Content Include="Content\images\slider_square.png" />
     <Content Include="Content\images\slide_1.jpg" />
     <Content Include="Content\images\slide_2.jpg" />
@@ -265,6 +272,12 @@
     <Content Include="Content\images\slide_5.jpg" />
     <Content Include="Content\images\slide_7.jpg" />
     <Content Include="Content\images\small_logo.png" />
+    <Content Include="Content\images\tooltip.png" />
+    <Content Include="Content\images\tooltip_left.png" />
+    <Content Include="Content\images\tooltip_right.png" />
+    <Content Include="Content\images\tooltip_up.png" />
+    <Content Include="Content\images\tumblr.png" />
+    <Content Include="Content\images\twitter.png" />
     <Content Include="favicon.ico" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -311,6 +324,8 @@
     <Content Include="Areas\Admin\Views\Owner\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\UploadTemplate.cshtml" />
     <Content Include="Areas\Default\Views\Home\Tooltip.cshtml" />
+    <Content Include="Areas\Default\Views\Home\AddPopup.cshtml" />
+    <Content Include="Areas\Default\Views\Home\AddPopupSuccess.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\fineuploader-4.1.1.min.js" />
     <Content Include="Scripts\index.js" />

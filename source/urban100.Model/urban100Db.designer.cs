@@ -42,6 +42,9 @@ namespace urban100.Model
     partial void InsertOwner(Owner instance);
     partial void UpdateOwner(Owner instance);
     partial void DeleteOwner(Owner instance);
+    partial void InsertCandidate(Candidate instance);
+    partial void UpdateCandidate(Candidate instance);
+    partial void DeleteCandidate(Candidate instance);
     #endregion
 		
 		public urban100DbDataContext() : 
@@ -103,6 +106,14 @@ namespace urban100.Model
 			get
 			{
 				return this.GetTable<Owner>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Candidate> Candidates
+		{
+			get
+			{
+				return this.GetTable<Candidate>();
 			}
 		}
 	}
@@ -765,7 +776,7 @@ namespace urban100.Model
 		
 		private string _Instagram;
 		
-		private string _Skype;
+		private string _Tumblr;
 		
 		private int _Cell;
 		
@@ -789,8 +800,8 @@ namespace urban100.Model
     partial void OnGoogleChanged();
     partial void OnInstagramChanging(string value);
     partial void OnInstagramChanged();
-    partial void OnSkypeChanging(string value);
-    partial void OnSkypeChanged();
+    partial void OnTumblrChanging(string value);
+    partial void OnTumblrChanged();
     partial void OnCellChanging(int value);
     partial void OnCellChanged();
     #endregion
@@ -960,22 +971,22 @@ namespace urban100.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Skype", DbType="NVarChar(150)")]
-		public string Skype
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tumblr", DbType="NVarChar(150)")]
+		public string Tumblr
 		{
 			get
 			{
-				return this._Skype;
+				return this._Tumblr;
 			}
 			set
 			{
-				if ((this._Skype != value))
+				if ((this._Tumblr != value))
 				{
-					this.OnSkypeChanging(value);
+					this.OnTumblrChanging(value);
 					this.SendPropertyChanging();
-					this._Skype = value;
-					this.SendPropertyChanged("Skype");
-					this.OnSkypeChanged();
+					this._Tumblr = value;
+					this.SendPropertyChanged("Tumblr");
+					this.OnTumblrChanged();
 				}
 			}
 		}
@@ -996,6 +1007,164 @@ namespace urban100.Model
 					this._Cell = value;
 					this.SendPropertyChanged("Cell");
 					this.OnCellChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Candidate")]
+	public partial class Candidate : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _Name;
+		
+		private string _Phone;
+		
+		private string _Email;
+		
+		private string _Notes;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnPhoneChanging(string value);
+    partial void OnPhoneChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnNotesChanging(string value);
+    partial void OnNotesChanged();
+    #endregion
+		
+		public Candidate()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="NVarChar(50)")]
+		public string Phone
+		{
+			get
+			{
+				return this._Phone;
+			}
+			set
+			{
+				if ((this._Phone != value))
+				{
+					this.OnPhoneChanging(value);
+					this.SendPropertyChanging();
+					this._Phone = value;
+					this.SendPropertyChanged("Phone");
+					this.OnPhoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(50)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Notes", DbType="NVarChar(MAX)")]
+		public string Notes
+		{
+			get
+			{
+				return this._Notes;
+			}
+			set
+			{
+				if ((this._Notes != value))
+				{
+					this.OnNotesChanging(value);
+					this.SendPropertyChanging();
+					this._Notes = value;
+					this.SendPropertyChanged("Notes");
+					this.OnNotesChanged();
 				}
 			}
 		}

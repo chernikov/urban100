@@ -7,4 +7,25 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="ID" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="140c5862-af60-4193-a8de-198da3728a7c" ChangeDateTime="07/03/2014 05:11:31">
+    <Property Name="ElementName" Value="[dbo].[Owner].[Skype]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Owner]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Tmblr" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f6e168e2-d2eb-48e5-80d2-73d1544b3a0d" ChangeDateTime="07/03/2014 05:11:40">
+    <Property Name="ElementName" Value="[dbo].[Owner].[Tmblr]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Owner]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Tumblr" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="aa3f6715-d757-4ad7-acf9-e0c9d1b10aad" ChangeDateTime="07/12/2014 10:18:46">
+    <Property Name="ElementName" Value="[dbo].[Candidate].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Candidate]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID" />
+  </Operation>
 </Operations>

@@ -41,7 +41,7 @@ namespace urban100.Model
 				cache.Facebook = instance.Facebook;
 				cache.Google = instance.Google;
 				cache.Instagram = instance.Instagram;
-				cache.Skype = instance.Skype;
+                cache.Tumblr = instance.Tumblr;
                 cache.Cell = instance.Cell;
                 Db.Owners.Context.SubmitChanges();
                 return true;

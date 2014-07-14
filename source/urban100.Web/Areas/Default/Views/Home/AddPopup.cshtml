@@ -1,0 +1,61 @@
+﻿@model CandidateOwnerView
+<div class="add-popup">
+    <div class="close"></div>
+    <div class="popup-header">
+        <h1>Долучайся до проекту</h1>
+        <div class="popup-subtitle">
+            Заповніть форму зворотнього зв’язку, щоб дізнатись більше про проект або стати його учасником
+        </div>
+    </div>
+    <div class="popup-body">
+        @using (Html.BeginForm("AddPopup", "Home", FormMethod.Post, new { id = "AddForm" }))
+        {
+            <div class="form-group">
+                <label>
+                    @Html.RadioButton("Ask", CandidateOwnerView.AskEnum.StrongInterest, Model.Ask == CandidateOwnerView.AskEnum.StrongInterest)
+                    Хочу стати учасником проекту
+                </label>
+                <label>
+                    @Html.RadioButton("Ask", CandidateOwnerView.AskEnum.Interest, Model.Ask == CandidateOwnerView.AskEnum.Interest)
+                    Хочу дізнатись більше про проект
+                </label>
+            </div>
+            <div class="form-group">
+                @if (Html.HasError("Name"))
+                {
+                    @Html.TextBox("Name", Model.Name, new { @class = "error", placeholder = "заповність поле" })
+                }
+                else
+                {
+                    @Html.TextBox("Name", Model.Name, new { placeholder = "Імя, Прізвище" })
+                }
+            </div>
+            <div class="form-group">
+                @if (Html.HasError("PhoneEmail"))
+                {
+                    @Html.TextBox("Phone", Model.Phone, new { placeholder = "заповність поле", data_placeholder = "Телефон", @class = "small error" })
+                    @Html.TextBox("Email", Model.Email, new { placeholder = "заповність поле", data_placeholder = "Електропошта", @class = "small error" })
+                }
+                else
+                {
+                    @Html.TextBox("Phone", Model.Phone, new { placeholder = "Телефон", @class = "small" })
+                    @Html.TextBox("Email", Model.Email, new { placeholder = "Електропошта", @class = "small" })
+                }
+                <span>або</span>
+            </div>
+
+            <div class="separator">
+                <span class="text-notes" data-type="StrongInterest">Моя мотивація</span>
+                <span class="text-notes" data-type="Interest" style="display:none;">Мої питання</span>
+            </div>
+            <div class="form-group">
+                @Html.TextArea("Notes", Model.Notes)
+            </div>
+
+            <div class="form-end">
+                <a href="https://www.facebook.com/urbanspace100"><span class="facebook"></span><span class="text">facebook спільнота</span></a>
+                <button class="submit-btn" id="AddPopupBtn">Надіслати</button>
+            </div>
+        }
+    </div>
+</div>

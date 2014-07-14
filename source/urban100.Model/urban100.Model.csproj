@@ -50,11 +50,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Proxy\Candidate.cs" />
     <Compile Include="Proxy\Owner.cs" />
     <Compile Include="Proxy\Role.cs" />
     <Compile Include="Proxy\User.cs" />
     <Compile Include="Proxy\UserRole.cs" />
     <Compile Include="SqlRepository.cs" />
+    <Compile Include="SqlRepository\Candidate.cs" />
     <Compile Include="SqlRepository\Owner.cs" />
     <Compile Include="SqlRepository\Role.cs" />
     <Compile Include="SqlRepository\User.cs" />

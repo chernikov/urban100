@@ -36,7 +36,7 @@ namespace urban100.Web.Models.ViewModels
 
         public string Instagram { get; set; }
 
-        public string Skype { get; set; }
+        public string Tumblr { get; set; }
 
         public int Cell { get; set; }
 

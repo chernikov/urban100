@@ -8,7 +8,7 @@
     [Facebook] NVARCHAR(150) NULL, 
     [Google] NVARCHAR(250) NULL, 
     [Instagram] NVARCHAR(150) NULL, 
-    [Skype] NVARCHAR(150) NULL,
+    [Tumblr] NVARCHAR(150) NULL,
 	[Cell] INT NOT NULL, 
     CONSTRAINT [PK_Owner] PRIMARY KEY CLUSTERED ([ID] ASC)
 )

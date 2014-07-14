@@ -1,0 +1,7 @@
+2014-07-12 14:17:18.6583|ERROR|urban100.Web.Mail.MailSender|Mail send exception
+2014-07-12 14:33:26.3397|ERROR|urban100.Web.Mail.MailSender|Mail send exception
+2014-07-12 14:34:07.4290|ERROR|urban100.Web.Mail.MailSender|Mail send exception
+2014-07-12 14:34:24.2400|ERROR|urban100.Web.Mail.MailSender|Mail send exception
+2014-07-12 14:51:59.0053|ERROR|urban100.Web.Mail.MailSender|Mail send exception
+2014-07-12 14:53:41.5952|ERROR|urban100.Web.Mail.MailSender|Mail send exception
+2014-07-12 15:13:20.6396|ERROR|urban100.Web.Mail.MailSender|Mail send exception

@@ -28,13 +28,15 @@ namespace urban100.Web.Mail
 
         private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
 
-        public void SendMail(string email, string subject, string body, MailAddress mailAddress = null)
+        public void SendMail(string email, string subject, string body)
         {
             try
             {
                 if (Config.EnableMail)
                 {
-                    MailMessage message = new MailMessage()
+                    var client = new SmtpClient();
+
+                    var message = new MailMessage()
                     {
                         Subject = subject,
                         BodyEncoding = Encoding.UTF8,
@@ -42,7 +44,8 @@ namespace urban100.Web.Mail
                         IsBodyHtml = true,
                         SubjectEncoding = Encoding.UTF8
                     };
-                    SmtpClient client = new SmtpClient();
+                    message.To.Add(new MailAddress(email));
+                    
                     client.Send(message);
                 }
                 else
@@ -52,7 +55,7 @@ namespace urban100.Web.Mail
             }
             catch (Exception ex)
             {
-                logger.Error("Mail send exception", ex.Message);
+                logger.Error("Mail send exception: " +  ex.Message);
             }
         }
     }
